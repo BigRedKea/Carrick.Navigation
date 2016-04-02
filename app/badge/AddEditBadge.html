@@ -1,0 +1,136 @@
+﻿<div class="modal-content">
+    <form name="form" >
+        <div class="modal-header">
+            <button type="button" 
+                    class="close" 
+                    ng-click="cancel()"
+                    data-dismiss="modal" 
+                    aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">{{headerTitle}}</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <label for="BadgeName" class="col-lg-3 control-label">Badge Name</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               name="BadgeName"
+                               class="form-control"
+                               ng-model="badge.BadgeName"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="BadgeLevel" class="col-lg-3 control-label">Badge Level</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               name="BadgeLevel"
+                               class="form-control"
+                               ng-model="badge.BadgeLevel"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="BadgeImage" class="col-lg-3 control-label">Badge Image</label>
+                    <div class="col-lg-8">
+                        <img name="BadgeImage" ng-src="data:image/JPEG;base64,{{badge.BadgeImage}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="BadgeSort" class="col-lg-3 control-label">Badge Sort</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               name="BadgeSort"
+                               ng-model="badge.BadgeSort"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="BadgeEnabled" class="col-lg-3 control-label">Badge Enabled</label>
+                    <div class="col-lg-8">
+                        <input type="checkbox"
+                               class="form-control"
+                               name="BadgeEnabled"
+                               ng-model="badge.BadgeEnabled"
+                               value ="true"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Stock" class="col-lg-3 control-label">Stock</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               name="Stock"
+                               ng-model="badge.Stock"
+                               value ="0"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="TargetStock" class="col-lg-3 control-label">Target Stock</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               name="TargetStock"
+                               ng-model="badge.TargetStock"
+                               value ="0"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="YearService" class="col-lg-3 control-label">Years of Service</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               name="YearService"
+                               ng-model="badge.YearService"
+                               value ="0"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="NightsUnderCanvas" class="col-lg-3 control-label">Nights Under Canvas</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               name="NightsUnderCanvas"
+                               class="form-control"
+                               value ="0"
+                               ng-model="badge.NightsUnderCanvas"
+                               ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Walkabout" class="col-lg-3 control-label">Walkabout</label>
+                    <div class="col-lg-8">
+                        <input type="text"
+                               class="form-control"
+                               name="Walkabout"
+                               value ="0"
+                               ng-model="badge.Walkabout"
+                               ng-required="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button"
+                    ng-click="save()"
+                    ng-disabled="form.$invalid"
+                    class="btn btn-success">
+                Save
+            </button>
+            <button type="button"
+                    ng-click="cancel()"
+                    class="btn btn-danger"
+                    data-dismiss="modal">
+                Cancel
+            </button>
+
+            <div class="alert-danger" ng-if="error.length > 0 " ng-bind="error"></div>
+
+        </div>
+    </form>
+</div>

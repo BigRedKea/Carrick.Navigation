@@ -1,0 +1,88 @@
+﻿
+<div class="form-horizontal">
+    <fieldset>
+        <legend>Badge Detail</legend>
+
+        <div class="col-lg-12">
+            <!--<div class="col-lg-3">-->
+            <!--<<img ng-src="{{currentBadge.BadgeImage ? currentBadge.BadgeImage : 'badgeimages/default-image.png'}}"
+                 class="img-circle"
+                 alt='badge image' />-->
+            <img class="img-circle" ng-src="data:image/JPEG;base64,{{currentBadge.BadgeImage}}" />
+        <!--</div>-->
+
+            <div class="form-group">
+                <label for="BadgeName" class="col-lg-3 control-label">Badge Name</label>
+                <div class="col-lg-8">
+                    <input type="text" id="BadgeName" class="form-control" ng-model="currentBadge.BadgeName" disabled>
+                </div>
+                <div class="col-lg-1">                    
+                    <button ng-click="editBadge()"
+                            ng-hide="currentBadge == null"
+                            class="btn btn-primary">
+                        Edit
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="BadgeLevel" class="col-lg-3 control-label">Badge Level</label>
+                <div class="col-lg-8">
+                    <input id="BadgeLevel" type="text" class="form-control" ng-model="currentBadge.BadgeLevel" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="BadgeSort" class="col-lg-3 control-label">BadgeSort</label>
+                <div class="col-lg-8">
+                    <input id ="BadgeSort" type="text" class="form-control" ng-model="currentBadge.BadgeSort" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="BadgeEnabled" class="col-lg-3 control-label">BadgeEnabled</label>
+                <div class="col-lg-8">
+                    <input id="BadgeEnabled" type="checkbox" class="form-control" ng-model="currentBadge.BadgeEnabled" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Stock" class="col-lg-3 control-label">Stock</label>
+                <div class="col-lg-8">
+                    <input id ="Stock" type="text" class="form-control" ng-model="currentBadge.Stock" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="TargetStock" class="col-lg-3 control-label">Target Stock</label>
+                <div class="col-lg-8">
+                    <input id ="TargetStock" type="text" class="form-control" ng-model="currentBadge.TargetStock" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="YearService" class="col-lg-3 control-label">Years of Service</label>
+                <div class="col-lg-8">
+                    <input id="YearService" type="text" class="form-control" ng-model="currentBadge.YearService" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="NightsUnderCanvas" class="col-lg-3 control-label">Nights Under Canvas </label>
+                <div class="col-lg-8">
+                    <input id="NightsUnderCanvas" type="text" class="form-control" ng-model="currentBadge.NightsUnderCanvas" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Walkabout" class="col-lg-3 control-label">Walkabout</label>
+                <div class="col-lg-8">
+                    <input id ="Walkabout" type="text" class="form-control" ng-model="currentBadge.Walkabout" disabled>
+                </div>
+            </div>
+            <!--<div class="form-group">
+                <div class="col-lg-8 col-lg-offset-3">
+                    <a ui-sref="badge.detail.contact({contactBadgeId: currentBadge.Id})">Contact Detail</a>
+                </div>
+            </div>-->
+        </div>
+
+    </fieldset>
+</div>
+
+<div ui-view></div>
+
+
+

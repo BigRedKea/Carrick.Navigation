@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <link rel="stylesheet" href="Content/site.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css">
+
+</head>
+<body ng-app="CarrickApp" class="animate">
+
+<div class="navbar navbar-inverse navbar-top" data-ng-controller="indexController">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a sref="home" class="navbar-brand">Authentication</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li data-ng-hide="!authentication.isAuth">
+                    <a href="#">Welcome {{authentication.Email}}</a>
+                </li>
+
+                <li>
+                    <a ui-sref='home'>Home</a>
+                </li>
+
+                <li data-ng-hide="!authentication.isAuth">
+                    <a ui-sref='badge'>Badge</a>
+                </li>
+
+                <li data-ng-hide="!authentication.isAuth">
+                    <a ui-sref="scoutingevents">Scouting Events</a>
+                </li>
+
+                <li>
+                    <a ui-sref='about'>About</a>
+                </li>
+
+                <li>
+                    <a ui-sref='contact'>Contact Us</a>
+                </li>
+
+                <li data-ng-hide="!authentication.isAuth">
+                    <a href="#/refresh">Refresh Token</a>
+                </li>
+
+                <li data-ng-hide="!authentication.isAuth">
+                    <a href="" data-ng-click="logOut()">Logout</a>
+                </li>
+
+                <li data-ng-hide="authentication.isAuth">
+                    <a href="#/login">Login</a>
+                </li>
+
+                <li data-ng-hide="authentication.isAuth">
+                    <a href="#/signup">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="loading-dialog" data-loading>
+    <h1>Loading</h1>
+</div>
+
+<div class="container body-content">
+    <div class="alert-danger" ng-if="error.length > 0 " ng-bind="error"></div>
+    <div ui-view></div>
+</div>
+
+<script src="Scripts/jquery-2.1.4.min.js"></script>
+<script src="Scripts/angular.js"></script>
+<script src="Scripts/angular-ui-router.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>
+<script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+<script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+<script src="Scripts/angular-animate.min.js"></script>
+<script src="Scripts/angular-file-upload.js"></script>
+
+
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+
+<!-- Application files -->
+<script src="app/app.js"></script>
+<script src="app/home/homectrl.js"></script>
+<script src="app/about/aboutctrl.js"></script>
+<script src="app/contact/contactctrl.js"></script>
+
+<script src="app/badge/badgeCtrl.js"></script>
+<script src="app/badge/badgeContactCtrl.js"></script>
+
+
+<script src="app/services/authInterceptorService.js?v=2"></script>
+<script src="app/services/authService.js?v=2"></script>
+<script src="app/services/tokensManagerService.js?v=2"></script>
+
+<!-- Load controllers -->
+<script src="app/authentication/indexController.js?v=2"></script>
+<script src="app/authentication/loginController.js?v=2"></script>
+<script src="app/authentication/signupController.js?v=2"></script>
+<script src="app/authentication/refreshController.js?v=2"></script>
+<script src="app/authentication/tokensManagerController.js?v=2"></script>
+<script src="app/authentication/associateController.js?v=2"></script>
+
+<!-- Application Services -->
+<script src="app/services/Badge.js"></script>
+
+
+<!-- Application Directives -->
+<script src="app/directives/asBadge.js"></script>
+
+<!--<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.9.0.js"></script>-->
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+<script src="bower_components/fullcalendar/dist/gcal.js"></script>
+<script src="app/calendar/calendar.js"></script>
+
+<script src="app/services/scoutingEventsService.js?v=2"></script>
+<script src="app/scoutingevent/scoutingEventController.js?"></script>
+
+</body>
+</html>
